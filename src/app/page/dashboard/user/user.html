@@ -1,0 +1,40 @@
+<div class="flex flex-col items-center justify-center min-h-screen p-4 bg-gray-50">
+  
+  <div class="w-full max-w-4xl bg-white border border-gray-200 rounded-lg shadow-md p-6">
+    <h2 class="mb-5 text-2xl font-bold tracking-tight text-gray-900 text-center">
+      👨‍🎓 Student Management List
+    </h2>
+
+    <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+      <table class="w-full text-sm text-left text-gray-500">
+        <thead class="text-xs text-gray-700 uppercase bg-gray-50">
+          <tr>
+            <th scope="col" class="px-6 py-3 text-center">Username</th>
+            <th scope="col" class="px-6 py-3 text-center">Password (ID)</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (user of users; track user.id) {
+            <tr class="bg-white border-b hover:bg-gray-50">
+              <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap text-center">
+                {{ user.username }}
+              </td>
+              <td class="px-6 py-4 text-center">
+                {{ user.password }}
+              </td>
+            </tr>
+          } @empty {
+            <tr class="bg-white">
+              <td colspan="2" class="px-6 py-10 text-center">
+                <div class="flex flex-col items-center">
+                  <span class="text-lg font-medium text-gray-400">No students found.</span>
+                  <p class="text-gray-400">Checking the server... 🔄</p>
+                </div>
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

@@ -1,9 +1,9 @@
 import { Routes } from '@angular/router';
 import { Dashboard } from './page/dashboard/dashboard';
 import { Teacher } from './page/dashboard/teacher/teacher';
-import { Student } from './page/dashboard/student/student';
 import { Login } from './page/login/login';
 import { DashboardRoot } from './page/dashboard/dashboard-root/dashboard-root';
+import { User } from './page/dashboard/user/user';
 
 export const routes: Routes = [
     {
@@ -15,8 +15,8 @@ export const routes: Routes = [
                 component:Teacher
             },
              {
-                path:"student",
-                component:Student
+                path:"user",
+                component:User
             },
             {
                 path:"",
